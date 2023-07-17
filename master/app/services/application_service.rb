@@ -1,7 +1,7 @@
 class ApplicationService
   class << self
-    def call(*args, &block)
-      service = new(*args, &block)
+    def call(*args, &)
+      service = new(*args, &)
       service.call
       service
     end

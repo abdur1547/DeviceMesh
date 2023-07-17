@@ -1,5 +1,5 @@
-describe 'GET /api/v1/user', { type: :request } do
-  let(:request!) { get api_v1_user_path, headers: headers, as: :json }
+describe 'GET /api/v1/user' do
+  let(:request!) { get api_v1_user_path, headers:, as: :json }
   let(:user) { create(:user) }
 
   context 'when being signed in' do

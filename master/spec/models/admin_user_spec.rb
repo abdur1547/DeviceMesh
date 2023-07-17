@@ -17,7 +17,7 @@
 #  index_admin_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
-RSpec.describe AdminUser, type: :model do
+RSpec.describe AdminUser do
   describe 'validations' do
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_presence_of(:password) }

@@ -1,7 +1,7 @@
 require 'addressable/uri'
 
-describe 'PUT api/v1/users/password/', { type: :request } do
-  let(:request!) { put user_password_path, params: params, headers: headers, as: :json }
+describe 'PUT api/v1/users/password/' do
+  let(:request!) { put user_password_path, params:, headers:, as: :json }
   let(:user) { create(:user) }
   let!(:password_token) { user.send(:set_reset_password_token) }
   let(:new_password) { '123456789aA?!' }

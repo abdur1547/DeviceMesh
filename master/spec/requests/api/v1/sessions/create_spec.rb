@@ -1,10 +1,10 @@
-describe 'POST /api/v1/users/sign_in', { type: :request } do
-  let(:request!) { post user_session_path, params: params, as: :json }
+describe 'POST /api/v1/users/sign_in' do
+  let(:request!) { post user_session_path, params:, as: :json }
   let(:params) do
     {
       user: {
-        email: email,
-        password: password
+        email:,
+        password:
       }
     }
   end

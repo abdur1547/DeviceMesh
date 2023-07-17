@@ -35,7 +35,7 @@
 #  index_users_on_uid_and_provider      (uid,provider) UNIQUE
 #
 
-describe User, type: :model do
+describe User do
   subject(:user) { create(:user) }
 
   describe 'validations' do

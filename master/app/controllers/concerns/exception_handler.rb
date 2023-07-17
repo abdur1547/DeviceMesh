@@ -17,7 +17,7 @@ module ExceptionHandler
   def render_errors(error_messages, status)
     error_messages = Array(error_messages)
 
-    render json: { errors: error_messages }, status: status
+    render json: { errors: error_messages }, status:
   end
 
   def render_attributes_errors(error_messages)

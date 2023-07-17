@@ -1,5 +1,5 @@
-describe 'PUT /api/v1/user', { type: :request } do
-  let(:request!) { put api_v1_user_path, params: params, headers: headers, as: :json }
+describe 'PUT /api/v1/user' do
+  let(:request!) { put api_v1_user_path, params:, headers:, as: :json }
 
   context 'when being signed in' do
     let(:headers) { auth_headers }
@@ -48,7 +48,7 @@ describe 'PUT /api/v1/user', { type: :request } do
       end
 
       context 'with the password check' do
-        let(:params) { { user: { password: 'newPassword' }, password_check: password_check } }
+        let(:params) { { user: { password: 'newPassword' }, password_check: } }
 
         context 'with an invalid password check' do
           let(:password_check) { 'notThePassword' }

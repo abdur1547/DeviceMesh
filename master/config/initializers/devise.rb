@@ -290,4 +290,4 @@ Devise.setup do |config|
   # end
 end
 
-Devise::TokenGenerator.prepend(::GemExtensions::Devise::TokenGenerator)
+Devise::TokenGenerator.prepend(GemExtensions::Devise::TokenGenerator)

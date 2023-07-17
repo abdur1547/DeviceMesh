@@ -1,5 +1,5 @@
-describe 'DELETE /api/v1/users/sign_out', { type: :request } do
-  let(:request!) { delete destroy_user_session_path, headers: headers, as: :json }
+describe 'DELETE /api/v1/users/sign_out' do
+  let(:request!) { delete destroy_user_session_path, headers:, as: :json }
   let(:user) { create(:user) }
 
   context 'when being signed in' do

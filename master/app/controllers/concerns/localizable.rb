@@ -7,8 +7,8 @@ module Localizable
 
   private
 
-  def switch_locale(&action)
-    I18n.with_locale(valid_locale, &action)
+  def switch_locale(&)
+    I18n.with_locale(valid_locale, &)
   end
 
   def valid_locale

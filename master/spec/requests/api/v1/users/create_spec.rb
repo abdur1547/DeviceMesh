@@ -1,5 +1,5 @@
-describe 'POST /api/v1/users', { type: :request } do
-  let(:request!) { post api_v1_users_path, params: params, as: :json }
+describe 'POST /api/v1/users' do
+  let(:request!) { post api_v1_users_path, params:, as: :json }
   let(:email) { 'obikenobi@rebel.com' }
   let(:password) { 'abcd1234' }
   let(:params) do
@@ -7,8 +7,8 @@ describe 'POST /api/v1/users', { type: :request } do
       user: {
         first_name: 'Obi Wan',
         last_name: 'Kenobi',
-        email: email,
-        password: password,
+        email:,
+        password:,
         locale: 'es'
       }
     }
