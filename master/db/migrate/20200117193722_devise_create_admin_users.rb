@@ -1,4 +1,4 @@
-class DeviseCreateAdminUsers < ActiveRecord::Migration[6.0]
+class DeviseCreateAdminUsers < ActiveRecord::Migration[7.0]
   disable_ddl_transaction!
 
   def change
