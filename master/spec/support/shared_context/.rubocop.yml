@@ -1,4 +1,0 @@
-inherit_from: ../../../.rubocop.yml
-
-RSpec/ContextWording:
-  Enabled: false

@@ -1,3 +1,2 @@
-class ApplicationController < ActionController::Base
-  protect_from_forgery prepend: true, with: :exception, unless: -> { request.format.json? }
+class ApplicationController < ActionController::API
 end
