@@ -1,0 +1,35 @@
+en:
+  active_admin:
+    charts:
+      sign_ups_per_month: 'Sign ups per month'
+    general: General
+    overview: Overview
+    session_info: Sign in info
+    this_month: This month
+    total: Total
+    dashboard_welcome:
+      welcome: Welcome to your Admin Backoffice
+      call_to_action: Here are some stats!
+  activerecord:
+    models:
+      user:
+        one: User
+        other: Users
+  errors:
+    server: 'An error ocurred'
+    network_throttling: 'Throttle limit reached'
+    record_not_found: '%{model} not found'
+    missing_param: 'The following param is missing or the value is empty: %{param}'
+    invalid_content_type: 'Invalid content type header'
+    page_overflow: 'The requested page does not exist'
+    invalid_reset_password_token: 'the reset password token is invalid'
+    authentication:
+      invalid_credentials: 'The credentials are not valid'
+      invalid_token: 'The token is not valid'
+      invalid_password_check: 'The current password is not valid'
+  emails:
+    reset_password:
+      recover_account: 'Recover account'
+  devise:
+    failure:
+      unauthenticated: 'Authentication is required to perform this action'
