@@ -13,6 +13,8 @@ gem "jbuilder"
 
 gem "redis", "~> 4.0"
 
+gem "figaro"
+
 # gem "kredis"
 
 gem "bcrypt", "~> 3.1.7"
