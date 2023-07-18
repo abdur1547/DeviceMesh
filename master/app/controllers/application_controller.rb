@@ -1,5 +1,14 @@
 class ApplicationController < ActionController::API
-  # before_action :authenticate_user
+  before_action :authenticate_user
+
+  rescue_from StandardError do |exception|
+    case exception.class.name
+    when ActiveRecord::RecordInvalid.name then unprocessable_entity(exception.message)
+    when Pagy::VariableError.name then process_pagy_error(exception)
+    when Pundit::NotAuthorizedError.name then unauthorized_response
+    else process_standard_error(exception)
+    end
+  end
 
   private
 
@@ -15,8 +24,28 @@ class ApplicationController < ActionController::API
   end
 
   def decode_token(token)
-    JWT.decode(token, Rails.application.secrets.secret_key_base)&.first
+    JWT.decode(token, ENV['SECRET_KEY_BASE'])&.first
   rescue JWT::DecodeError
     nil
+  end
+
+  def current_user
+    @current_user
+  end
+
+  def process_standard_error(exception)
+    render json: { errors: [{ base: [exception.message] }] }, status: :internal_server_error
+  end
+
+  def unauthorized_response(reason = 'You are unauthorized to view this resource')
+    render json: { errors: [{ base: [reason] }] }, status: :unauthorized
+  end
+
+  def unprocessable_entity(error_message)
+    render json: { errors: [{ base: [error_message] }] }, status: :unprocessable_entity
+  end
+
+  def process_pagy_error(exception)
+    render json: { errors: [{ base: [exception.message] }] }, status: :unprocessable_entity
   end
 end

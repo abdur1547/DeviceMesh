@@ -25,11 +25,11 @@ class AuthenticationController < ApplicationController
   private
 
   def generate_token(user_id, exp: Time.now.to_i + Constants::SESSION_LIFETIME)
-    JWT.encode({ user_id: user_id }, exp: exp, Rails.application.secrets.secret_key_base)
+    JWT.encode({ user_id: user_id }, exp: exp, ENV['SECRET_KEY_BASE'])
   end
 
   def decode_token(token)
-    JWT.decode(token, Rails.application.secrets.secret_key_base)&.first
+    JWT.decode(token, ENV['SECRET_KEY_BASE'])&.first
   rescue JWT::DecodeError
     nil
   end
