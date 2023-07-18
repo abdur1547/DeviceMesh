@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: <%= ENV['DB_NAME'] || device_mesh_development %>
-  username: <%= ENV['DB_USERNAME'] || postgresql %>
+  username: <%= ENV['DB_USERNAME'] || postgres %>
   password: <%= ENV['DB_PASSWORD'] || postgresql %>
   host: <%= ENV['DB_HOST'] || localhost %>
   port: <%= ENV['DB_PORT'] || 5432 %>
