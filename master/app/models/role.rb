@@ -18,4 +18,7 @@ class Role < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :name, inclusion: {in: [ADMIN, NORMAL]}
+
+  has_many :user_roles
+  has_many :users, through: :user_roles
 end

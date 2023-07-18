@@ -10,4 +10,8 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
+  has_secure_password
+  
+  has_one :user_role, dependent: :destroy
+  has_one :role, through: :user_role
 end
