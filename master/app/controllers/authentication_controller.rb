@@ -24,8 +24,8 @@ class AuthenticationController < ApplicationController
 
   private
 
-  def generate_token(user_id)
-    JWT.encode({ user_id: user_id }, Rails.application.secrets.secret_key_base)
+  def generate_token(user_id, exp: Time.now.to_i + Constants::SESSION_LIFETIME)
+    JWT.encode({ user_id: user_id }, exp: exp, Rails.application.secrets.secret_key_base)
   end
 
   def decode_token(token)
