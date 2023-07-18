@@ -14,4 +14,5 @@ class User < ApplicationRecord
   
   has_one :user_role, dependent: :destroy
   has_one :role, through: :user_role
+  has_many :meshes, dependent: :destroy
 end
