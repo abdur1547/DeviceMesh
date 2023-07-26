@@ -1,4 +1,6 @@
 class AuthenticationController < ApplicationController
+  skip_before_action :authenticate_user
+  
   def login
     user = User.find_by(email: params[:email])
 
@@ -24,8 +26,8 @@ class AuthenticationController < ApplicationController
 
   private
 
-  def generate_token(user_id, exp: Time.now.to_i + Constants::SESSION_LIFETIME)
-    JWT.encode({ user_id: user_id }, exp: exp, ENV['SECRET_KEY_BASE'])
+  def generate_token(user_id, exp=Time.now.to_i + Constants::SESSION_LIFETIME)
+    JWT.encode({ user_id: user_id, exp: exp}, ENV['SECRET_KEY_BASE'])
   end
 
   def decode_token(token)
