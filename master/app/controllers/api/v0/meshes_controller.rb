@@ -3,6 +3,11 @@ class Api::V0::MeshesController < ApplicationController
   end
 
   def create
+    result = MeshService::Create.call
+    puts result
+    # puts result.data
+    puts result.success?
+    puts result.failure?
   end
 
   def show
@@ -12,5 +17,10 @@ class Api::V0::MeshesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def mesh_params
+    params.permit(:name)
   end
 end
