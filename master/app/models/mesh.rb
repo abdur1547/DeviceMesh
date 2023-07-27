@@ -21,5 +21,5 @@ class Mesh < ApplicationRecord
   validates :name, presence: true
   
   belongs_to :user
-  has_many :slaves, dependent: :destroy
+  has_many :slaves, class_name: 'Slave', dependent: :destroy
 end
