@@ -1,5 +1,8 @@
 class Api::V0::MeshesController < ApplicationController
   def index
+    result = MeshService::Index.call(current_user: current_user)
+    return success_json_response(success: true, data: result[:data], serializer: Api::V0::MeshSerializer,status: :ok ) if result[:success?]
+    return failure_json_response(errors: result[:errors], status: :not_found)
   end
 
   def create
@@ -9,12 +12,21 @@ class Api::V0::MeshesController < ApplicationController
   end
 
   def show
+    result = MeshService::Show.call(id: params[:id], current_user: current_user)
+    return success_json_response(success: true, data: result[:data], serializer: Api::V0::MeshSerializer, status: :ok ) if result[:success?]
+    return failure_json_response(errors: result[:errors], status: :not_found)
   end
 
   def update
+    result = MeshService::Update.call(id: params[:id], name: params[:name], current_user: current_user)
+    return success_json_response(success: true, data: result[:data], serializer: Api::V0::MeshSerializer, status: :ok ) if result[:success?]
+    return failure_json_response(errors: result[:errors], status: :not_found)
   end
 
   def destroy
+    result = MeshService::Destroy.call(id: params[:id], current_user: current_user)
+    return success_json_response(success: true, data: result[:data], serializer: Api::V0::MeshSerializer, status: :ok ) if result[:success?]
+    return failure_json_response(errors: result[:errors], status: :not_found)
   end
 
   private
