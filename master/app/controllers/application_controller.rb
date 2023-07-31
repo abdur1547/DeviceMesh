@@ -4,8 +4,8 @@ class ApplicationController < ActionController::API
   rescue_from StandardError do |exception|
     case exception.class.name
     when ActiveRecord::RecordInvalid.name then unprocessable_entity(exception.message)
-    when Pagy::VariableError.name then process_pagy_error(exception)
-    when Pundit::NotAuthorizedError.name then unauthorized_response
+    # when Pagy::VariableError.name then process_pagy_error(exception)
+    # when Pundit::NotAuthorizedError.name then unauthorized_response
     else process_standard_error(exception)
     end
   end
