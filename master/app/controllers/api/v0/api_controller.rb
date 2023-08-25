@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module Api
-  module V1
-    class ApiController < ActionController::API
+  module V0
+    class ApiController < ApplicationController
       include Pagy::Backend
       include Pundit::Authorization
 
