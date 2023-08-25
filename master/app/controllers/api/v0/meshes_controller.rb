@@ -1,4 +1,4 @@
-class Api::V0::MeshesController < ApplicationController
+class Api::V0::MeshesController < ApiController
   def index
     result = MeshService::Index.call(current_user: current_user)
     return success_json_response(success: true, data: result[:data], serializer: Api::V0::MeshSerializer,status: :ok ) if result[:success?]
