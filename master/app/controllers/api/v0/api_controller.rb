@@ -20,7 +20,7 @@ module Api
       private
 
       def process_pagy_error(exception)
-        render json: { errors: [{ base: [exception.message] }] }, status: :unprocessable_entity
+        failure_json_response(errors: { message: exception.message }, status: :unprocessable_entity)
       end
 
       def process_standard_error(exception)
@@ -46,16 +46,16 @@ module Api
         unauthorized_response unless current_user
       end
 
-      def unauthorized_response(reason = 'You are unauthorized to view this resource')
-        render json: { errors: [{ base: [reason] }] }, status: :unauthorized
+      def unauthorized_response(error_message = 'You are unauthorized to view this resource')
+        failure_json_response(errors: { message: error_message }, status: :unauthorized)
       end
 
-      def not_found_response(reason = 'The requested resource does not exist')
-        render json: { errors: [{ base: [reason] }] }, status: :not_found
+      def not_found_response(error_message = 'The requested resource does not exist')
+        failure_json_response(errors: { message: error_message }, status: :not_found)
       end
 
       def unprocessable_entity(error_message)
-        render json: { errors: [{ base: [error_message] }] }, status: :unprocessable_entity
+        failure_json_response(errors: { message: error_message }, status: :not_found)
       end
 
       def forbidden_response
