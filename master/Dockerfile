@@ -30,6 +30,7 @@ ARG RAILS_ROOT=/app
 ARG PACKAGES="tzdata postgresql-client bash"
 
 ENV RAILS_ENV=production
+ENV APP_PORT=3000
 ENV BUNDLE_APP_CONFIG="$RAILS_ROOT/.bundle"
 
 WORKDIR $RAILS_ROOT
@@ -40,6 +41,6 @@ RUN apk update \
 
 COPY --from=build $RAILS_ROOT $RAILS_ROOT
 
-EXPOSE 3000
+EXPOSE ${APP_PORT}
 
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+CMD [ "/bin/bash", "-c", "bundle exec rails server --port ${APP_PORT}"]
