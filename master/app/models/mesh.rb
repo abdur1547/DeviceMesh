@@ -19,6 +19,7 @@
 #
 class Mesh < ApplicationRecord
   validates :name, presence: true
+  validates :name, uniqueness: {scope: :user, case_sensitive: false}
   
   belongs_to :user
   has_many :slaves, class_name: 'Slave', dependent: :destroy

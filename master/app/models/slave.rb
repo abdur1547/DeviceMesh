@@ -20,7 +20,7 @@
 #
 class Slave < ApplicationRecord
   validates :name, presence: true
-  validates :name, uniqueness: true
+  validates :name, uniqueness: {scope: :mesh, case_sensitive: false}
 
   has_many :pins
   belongs_to :mesh

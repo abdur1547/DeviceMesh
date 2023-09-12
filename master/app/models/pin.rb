@@ -23,6 +23,7 @@ class Pin < ApplicationRecord
   OFF = false
   
   validates :name, presence: true
+  validates :name, uniqueness: {scope: :slave, case_sensitive: false}
   validates :status, presence: true
   validates :status, inclusion: {in: [ON, OFF]}
 
