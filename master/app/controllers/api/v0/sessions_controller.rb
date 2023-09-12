@@ -4,7 +4,7 @@ module Api
   module V0
     class SessionsController < ApiController
       def create
-        render json: encoded_jwt.to_json, status: :created
+        success_json_response(data: {token: encoded_jwt}, status: :created)
       end
 
       private

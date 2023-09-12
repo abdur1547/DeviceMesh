@@ -8,20 +8,20 @@ module Api
 
         if user&.authenticate(login_params[:password])
           token = JwtService::Encoder.call(user)
-          render json: { token: token }
+          success_json_response(data: {token: token}, status: :created)
         else
-          render json: { error: 'Invalid credentials' }, status: :unauthorized
+          failure_json_response(errors: "Invalid credentials", status: :unauthorized)
         end
       end
 
       def signup
         user = User.new(signup_params)
 
-        if user.create
+        if user.save
           token = JwtService::Encoder.call(user)
-          render json: { token: token }
+          success_json_response(data: { token: token, user:  user}, status: :created)
         else
-          render json: { error: 'Invalid credentials' }, status: :unauthorized
+          failure_json_response(errors: user.errors.full_messages, status: :unauthorized)
         end
       end
 
