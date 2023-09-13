@@ -47,7 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_123059) do
     t.bigint "mesh_id"
     t.index ["mesh_id", "name"], name: "index_slaves_on_mesh_id_and_name", unique: true
     t.index ["mesh_id"], name: "index_slaves_on_mesh_id"
-    t.index ["name"], name: "index_slaves_on_name", unique: true
   end
 
   create_table "user_roles", force: :cascade do |t|
