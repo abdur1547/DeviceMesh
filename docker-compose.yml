@@ -3,6 +3,7 @@
 version: '3.8'
 
 x-app: &app
+  image: device_mesh:latest
   build:
     context: ./master
     dockerfile: ./Dockerfile
