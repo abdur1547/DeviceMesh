@@ -32,14 +32,14 @@ module Api
       end
 
       def decode_jwt
-        @data = JwtDecoder.call(request.headers['jwt'])
+        @data = JwtService::Decoder.call(request.headers['jwt'])
         unauthorized_response if @data.blank?
       end
 
       def current_user
         return if @data.blank? || @data['user_id'].blank?
 
-        @current_user ||= User.find_by(external_id: @data['user_id'], external_type: PARTNERS_AUTH_HASH[@data['requester_token']])
+        @current_user ||= User.find_by(id: @data['user_id'])
       end
 
       def authenticate_user
