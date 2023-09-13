@@ -8,7 +8,7 @@ module MeshService
     end
     
     def call
-      mesh = Mesh.find_by(id: id)
+      mesh = Mesh.find_by!(id: id)
       return success(mesh)
       rescue => e
         return failure(e)
