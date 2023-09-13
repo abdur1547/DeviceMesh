@@ -8,9 +8,8 @@ module SlaveService
     end
     
     def call
-      slaves = current_user.slaves
-      slaves = slaves.where(mesh_id: mesh_id) if mesh_id
-      return success(slaves)
+      mesh = current_user.meshes.find_by!(id: mesh_id)
+      return success(mesh.slaves)
       rescue => e
         return failure(e)
     end

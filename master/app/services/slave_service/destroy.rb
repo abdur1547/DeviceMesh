@@ -8,7 +8,7 @@ module SlaveService
     end
     
     def call
-      mesh = Mesh.find_by!(id: id)
+      mesh = Slave.find_by!(id: id)
       return success(mesh) if mesh.destroy!
       rescue => e
         return failure(e)
