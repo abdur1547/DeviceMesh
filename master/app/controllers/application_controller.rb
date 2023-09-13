@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
   def success_json_response(data:, status:, serializer: nil)
-    return render json: {success: true, status: status, data: ActiveModelSerializers::SerializableResource.new(data, {serialize_each: serializer})}, status: status if serializer
+    return render json: {success: true, status: status, data: ActiveModelSerializers::SerializableResource.new(data, {each_serializer: serializer})}, status: status if serializer
     render json: {success: true, status: status, data: data}, status: status
   end
 
