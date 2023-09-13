@@ -12,7 +12,6 @@
 #
 #  index_slaves_on_mesh_id           (mesh_id)
 #  index_slaves_on_mesh_id_and_name  (mesh_id,name) UNIQUE
-#  index_slaves_on_name              (name) UNIQUE
 #
 # Foreign Keys
 #
