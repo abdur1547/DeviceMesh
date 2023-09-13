@@ -5,6 +5,5 @@ class CreateSlaves < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_index :slaves, :name, unique: true
   end
 end
