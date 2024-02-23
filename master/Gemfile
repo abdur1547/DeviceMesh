@@ -17,7 +17,7 @@ gem 'pundit', '~> 2.3', '>= 2.3.1'
 
 gem "jbuilder"
 
-gem "redis", "~> 5.0"
+gem "redis", "~> 5.1"
 
 gem "figaro"
 
