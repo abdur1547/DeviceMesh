@@ -116,7 +116,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jsonapi-renderer (0.2.2)
-    jwt (2.8.0)
+    jwt (2.8.1)
       base64
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -144,7 +144,7 @@ GEM
     nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
     pagy (7.0.8)
-    pg (1.5.5)
+    pg (1.5.6)
     psych (5.1.2)
       stringio
     puma (6.4.2)
