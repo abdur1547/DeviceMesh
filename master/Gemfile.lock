@@ -124,7 +124,7 @@ GEM
       net-smtp
     marcel (1.0.4)
     mini_mime (1.1.5)
-    minitest (5.24.1)
+    minitest (5.25.1)
     msgpack (1.7.2)
     net-imap (0.4.14)
       date
@@ -144,7 +144,7 @@ GEM
       stringio
     puma (6.4.2)
       nio4r (~> 2.0)
-    pundit (2.3.2)
+    pundit (2.4.0)
       activesupport (>= 3.0.0)
     racc (1.8.1)
     rack (3.1.7)
@@ -225,7 +225,7 @@ DEPENDENCIES
   pagy (~> 9.0.5)
   pg (~> 1.5)
   puma (~> 6.4)
-  pundit (~> 2.3)
+  pundit (~> 2.4)
   rack-cors
   rails (~> 7.2.0)
   redis (~> 5.2)
