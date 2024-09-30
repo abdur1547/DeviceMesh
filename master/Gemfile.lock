@@ -111,7 +111,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jsonapi-renderer (0.2.2)
-    jwt (2.9.0)
+    jwt (2.9.1)
       base64
     logger (1.6.1)
     loofah (2.22.0)
