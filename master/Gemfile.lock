@@ -139,7 +139,7 @@ GEM
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
     pagy (9.1.0)
-    pg (1.5.8)
+    pg (1.5.9)
     psych (5.1.2)
       stringio
     puma (6.4.3)
