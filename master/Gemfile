@@ -7,17 +7,17 @@ gem "rails", "~> 7.2.2"
 
 gem "active_model_serializers"
 
-gem 'pagy', '~> 9.3.2'
+gem 'pagy', '~> 9.3.3'
 
 gem "pg", "~> 1.5"
 
-gem "puma", "~> 6.5"
+gem "puma", "~> 6.6"
 
-gem 'pundit', '~> 2.4'
+gem 'pundit', '~> 2.5'
 
 gem "jbuilder"
 
-gem "redis", "~> 5.3"
+gem "redis", "~> 5.4"
 
 gem "figaro"
 
